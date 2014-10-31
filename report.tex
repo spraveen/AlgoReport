@@ -1,0 +1,52 @@
+% report.tex
+
+\documentclass[11pt]{article}
+\usepackage{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+\input{preamble}
+
+\author{Praveen Kumar Shanmugam}
+\author{Shridharan Chandramouli}
+\affil{University of Utah}
+
+\date{\today }
+
+\input{title}
+
+\begin{document}
+
+
+%\bibliographystyle{plain}
+\bibliographystyle{acm} 
+
+\vspace{\fill}
+\maketitle
+\vspace{\fill}
+
+
+\newpage
+\pagestyle{plain}
+
+% 1 page abstract
+\input{abstract}
+\pagestyle{plain}
+
+% 2 page explanation
+\input{explain}
+\pagestyle{plain}
+
+\newpage
+\pagestyle{plain}
+
+
+\renewcommand{\refname}{References}
+% generate References section
+\bibliographystyle{acm}{
+    \bibliography{report}
+}
+
+
+\end{document}
+
