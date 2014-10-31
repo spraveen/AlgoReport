@@ -5,16 +5,55 @@
 \section*{Problem}
 
 \subsection*{Problem Definition}
-    Define the problem being solved in this paper (formally!)
+    The problem of finding the maximum flow in a given graph is solved using
+    preflow concept of Karzanov. By incorporating the dynamic tree data
+    structure~\cite{Sleator:1983:DSD:61337.61338} of Sleator and Tarjan 
+    the new approach acheives a running time of $\mathcal{O}(nm\log{(n^2/m)})$ on an 
+    \textit{n-vertex}, \textit{m-edge} graph. \newline
+    
+    A minimum cut is a cut of minimum capacity. The max-flow, min-cut theorem 
+    of Ford and Fulkerson states that the value of a maximum flow is equal 
+    to the capacity of a minimum cut. \newline
+
+    Graph G = (V, E) is a directed graph with vertex set V and edge set E.
+    Size of V is denoted by \textit{n} and size of E by \textit{m}. G is a
+    network if it has two distinct distinguished vertices, a \textit{source s}
+    and a \textit{sink t}, and a positive capacity \textit{c(v,w)} on each
+    directed edge (v,w). A flow \textit{f} on G is a real-valued function on
+    vertex pairs satisfying. The value of a flow \textit{f} is the net flow
+    into the sink,
+    \begin{equation}
+    |f| = \sum\nolimits_{v \in V} f(v,t)
+    \end{equation}
+    \newline
+
+    A maximum flow is a flow of maximum value. A \textit{cut} S, $\bar S$ is a
+    partition of the vertex set $( S \cup \bar S\ = \ V, S \cap \bar S \ = \
+    0)$ with $ s \in S$ and $t \in \bar S$. The capacity of the cut is
+    \begin{equation}
+    c(S, \bar S) = \sum\nolimits_{v \in S, w \in \bar S} c(v,w)
+    \end{equation}
+    \newline
+    
+    The flow across the cut is
+    \begin{equation}
+    f(S, \bar S) = \sum\nolimits_{v \in S, w \in \bar S} f(v,w) = |f|
+    \end{equation}
+    \newline
+    
 
 \subsection*{Main Result}
-    State the main result
+    The new approach makes the algorithm as fast as any known method for any
+    graph density and faster on graphs of moderate destiny. And the algorithm
+    is efficient in distributed and parallel implementations. The parallel
+    implementation running in $\mathcal{O} (n^2\ \log{n})$ time and uses only
+    $\mathcal{O}(m)$ space with a time bound $\mathcal{O}(n^3)$.
 
 \subsection*{Importance of Result}
-    Explain why this result is important (provide some background with
-    references)
+    \bf{TODO:Explain why this result is important (provide some background with
+    references)}
 
 \subsection*{Impact}
-    Explain what impact (if any) this result has had (or might have)
+    \bf{TODO:Explain what impact (if any) this result has had (or might have)}
 %
 
