@@ -47,13 +47,50 @@
     graph density and faster on graphs of moderate destiny. And the algorithm
     is efficient in distributed and parallel implementations. The parallel
     implementation running in $\mathcal{O} (n^2\ \log{n})$ time and uses only
-    $\mathcal{O}(m)$ space with a time bound $\mathcal{O}(n^3)$.
+    $\mathcal{O}(m)$ space with a time bound $\mathcal{O}(n^3)$, and 
+    achieves a $\mathcal{O}(nm\ \log{(n^2/m)})$ run
+    time in a sequential implementation.
 
 \subsection*{Importance of Result}
-    \bf{TODO:Explain why this result is important (provide some background with
+    \textbf{TODO:Explain why this result is important (provide some background with
     references)}
+    \newline
+    The below table shows the algorithms running time complexity which performs
+    better in either in dense graphs or in sparse graphs. But there is no
+    clear winner which performs better in both the cases. This is where our
+    approach surpasses all. By using the dynamic tree data structure \cite{Sleator:1983:DSD:61337.61338} 
+    of Sleator and Tarjan it achieves a $\mathcal{O}(nm\ \log{(n^2/m)})$ run
+    time in a sequential implementation, and $\mathcal{O}(n^2\ \log(n))$ in a
+    parallel version of implementation. 
+    \newline
+    \begin{center}
+    \begin{tabular}{| c | l | p{5cm} | l | }
+        \hline                       
+        S. No & Date & Discoverer & Running Time \\
+        \hline
+        1 & 1956 & Ford and Fulkerson & - \\
+        2 & 1969 & Edmonds and Karp \cite{Edmonds:1972:TIA:321694.321699} & $\mathcal{O}(nm^2)$ \\
+        3 & 1970 & Dinic & $\mathcal{O}(n^2m)$ \\
+        4 & 1974 & Karzanov & $\mathcal{O}(n^3)$ \\
+        5 & 1977 & Cherkasky & $\mathcal{O}(n^2 \sqrt(m))$ \\
+        6 & 1978 & Malhotra, Pramodh Kumar, and Maheshwari &
+        $\mathcal{O}(n^3)$ \\
+        7 & 1978 & Galil & $\mathcal{O}(n^{5/3}m^{2/3})$ \\
+        \multirow{2}{*}{8} & 1978 & Galil and Naamad \cite{citeulike:1687675}; & $\mathcal{O}(nm\ {(\log n)}^2)$ \\
+                           &      & Shiloach \cite{Shiloach:1978:OIL:892195} &   \\
+        9 & 1980 & Sleator and Tarjan \cite{Sleator:1983:DSD:61337.61338} & $\mathcal{O}(nm\ \log(n))$ \\
+        10 & 1982 & Shiloach and Vishkin \cite{Shiloach:1982:ONL:61335.61336} & $\mathcal{O}(n^3)$ \\
+        11 & 1983 & Gabow \cite{Gabow:1985:SAN:5212.5260} & $\mathcal{O}(nm\ \log(N))$ \\
+        12 & 1984 & Tarjan & $\mathcal{O}(n^3)$ \\
+        \hline                       
+    \end{tabular}
+    \end{center}
 
 \subsection*{Impact}
-    \bf{TODO:Explain what impact (if any) this result has had (or might have)}
+    \textbf{TODO:Explain what impact (if any) this result has had (or might have)}
+    \newline
+    The approach gives a generalized best solution for either density or a
+    sparse graph dealt with. This simplifies the usage of the algorithm for
+    both type of graph inputs.
 %
 
